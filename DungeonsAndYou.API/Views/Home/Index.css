@@ -1,0 +1,30 @@
+
+/* Medieval index styling */
+.index-medieval {
+    background-color: #fbf0e4; /* Parchment-like background */
+    color: #5d3a00; /* Dark brown color for text */
+    font-family: 'Old London', fantasy; /* Placeholder for a medieval style font */
+}
+
+.index-medieval h2 {
+    color: #5d3a00;
+}
+
+.index-medieval .btn-primary {
+    background-color: #8a5c2e; /* Earthy brown color */
+    border-color: #5d3a00; /* Dark brown color */
+}
+
+.index-medieval .table {
+    border: 1px solid #c9a87c; /* Old gold border */
+}
+
+.index-medieval .table thead th {
+    background-color: #c9a87c; /* Old gold background for header */
+}
+
+.index-medieval .table-hover tbody tr:hover {
+    background-color: #ece5d2; /* Lighter parchment color on hover */
+}
+
+/* Add more medieval styles as needed */

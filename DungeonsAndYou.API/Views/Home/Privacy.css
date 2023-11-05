@@ -1,0 +1,15 @@
+
+/* Medieval privacy styling */
+.privacy-medieval {
+    background-color: #fbf0e4; /* Parchment-like background */
+    color: #5d3a00; /* Dark brown color for text */
+    font-family: 'Old London', fantasy; /* Placeholder for a medieval style font */
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.privacy-medieval h2 {
+    color: #5d3a00;
+}
+
+/* Add more medieval styles as needed */

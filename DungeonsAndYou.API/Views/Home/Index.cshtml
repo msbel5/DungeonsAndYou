@@ -1,0 +1,67 @@
+﻿@model IEnumerable<DungeonsAndYou.Services.DTOs.CharacterSheetDTO>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+
+<div class="container-fluid index-medieval p-0 m-0">
+    <div class="row text-center">
+        <h2 class="col-md-6 text-left pl-0 ml-0">Karakter Listesi</h2>
+        <h2 class="col-md-6 text-right pr-0 mr-0 align-self-center">@Html.ActionLink("Yeni Karakter", "New", "Home", null, new { @class = "d-inline float-right btn btn-primary" })</h2>
+    </div>
+</div>
+
+
+<p></p>
+<div class="table-responsive">
+    <table id="sheets" class="table table-bordered table-hover table-responsive-xl">
+        <thead>
+            <tr>
+                <th>İsim</th>
+                <th>Irk</th>
+                <th>Sınıf</th>
+                <th>Kişilik</th>
+                <th>Yönelim</th>
+                <th>Düzenle</th>
+                <th>Sil</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var sheetDTO in Model)
+            {
+                <tr>
+                    <td><a href='/home/details/@sheetDTO.Id'>@sheetDTO.Name</a></td>
+                    <td>@sheetDTO.Race</td>
+                    <td>@sheetDTO.Class</td>
+                    <td>@sheetDTO.Background</td>
+                    <td>@sheetDTO.Alignment</td>
+                    <td><a href='/home/edit/@sheetDTO.Id'>Düzenle</a></td>
+                    <td><button class="btn-link js-delete" data-sheet-id=@sheetDTO.Id>Sil</button></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
+@section scripts
+    {    
+    <script>
+        $("#sheets").on("click", ".js-delete", function () {
+            console.log("clicked");
+            var button = $(this);
+            bootbox.confirm("Are you sure you want to delete this Character?",
+                function () {
+                    $.ajax({
+                        url: "/api/sheets/" + button.attr("data-sheet-id"),
+                        method: "DELETE",
+                        success: function () {                            
+                            location.reload();
+                        }
+                    });
+                });
+        });
+    </script>
+}
