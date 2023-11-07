@@ -18,7 +18,7 @@ namespace DungeonsAndYou.Data.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseMySql("Server=dnugame.mariadb.database.azure.com; Port=3306; Database=DnUGame; Uid=DnUCreator@dnugame; Pwd=dnu2023*; SslMode=Preferred",
+            optionsBuilder.UseMySql("Server=dnugame.mariadb.database.azure.com; Port=3306; Database=DnUGame; Uid=******@dnugame; Pwd=******; SslMode=Preferred",
                 new MariaDbServerVersion(new Version(10, 3)));
         }
 
